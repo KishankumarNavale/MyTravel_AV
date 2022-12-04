@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.av.view.LoginController">
+   <children>
+     <Label fx:id="headerLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="366.0" layoutY="18.0" prefHeight="26.0" prefWidth="450.0" text="ANAND VIHARI" textAlignment="JUSTIFY" textFill="RED">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Separator layoutX="2.0" layoutY="84.0" prefHeight="8.0" prefWidth="1200.0" />
+      <Separator layoutY="620.0" prefHeight="8.0" prefWidth="1200.0" />
+      <TextField fx:id="loginUname" layoutX="446.0" layoutY="134.0" prefHeight="25.0" prefWidth="289.0" promptText="Enter User Name" />
+      <PasswordField fx:id="loginPassword" layoutX="446.0" layoutY="176.0" prefHeight="25.0" prefWidth="289.0" promptText="Enter Password" />
+     
+      <Button fx:id="loginButton" layoutX="446.0" layoutY="240.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="25.0" prefWidth="108.0" text="LOGIN">
+         <effect>
+            <Blend />
+         </effect></Button>
+      <Button fx:id="loginCancel" layoutX="627.0" layoutY="240.0" mnemonicParsing="false" onAction="#cancelLogin" prefHeight="25.0" prefWidth="108.0" text="CANCEL">
+         <effect>
+            <Blend />
+         </effect></Button>
+      <Label fx:id="loginUnameLabel" layoutX="319.0" layoutY="138.0" text="USER NAME*" textFill="#652b02">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="loginPasswordLabel" layoutX="319.0" layoutY="180.0" text="PASSWORD*" textFill="#652b02">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Hyperlink fx:id="chagePasswordLink" layoutX="539.0" layoutY="209.0" onAction="#enableCPAction" text="Change Password" textFill="RED" />
+      <TextField fx:id="cpUname" layoutX="446.0" layoutY="368.0" prefHeight="25.0" prefWidth="289.0" promptText="Enter User Name" />
+      <PasswordField fx:id="cpOldPassword" layoutX="446.0" layoutY="415.0" prefHeight="25.0" prefWidth="289.0" promptText="Enter Old Password" />
+      <PasswordField fx:id="cpNewPassword" layoutX="446.0" layoutY="459.0" prefHeight="25.0" prefWidth="289.0" promptText="Enter New Password" />
+      <Button fx:id="cpConfirm" layoutX="446.0" layoutY="510.0" mnemonicParsing="false" onAction="#confirmChangePasswordAction" prefHeight="25.0" prefWidth="108.0" text="CONFIRM">
+
+
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="cpCancelButton" layoutX="627.0" layoutY="510.0" mnemonicParsing="false" onAction="#cpCancelAction" prefHeight="25.0" prefWidth="108.0" text="CANCEL">
+
+
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+
+
+      <Label fx:id="cpUnamelabel" layoutX="319.0" layoutY="372.0" text="USER NAME*" textFill="#652b02">
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+      <Label fx:id="cpOldPasswordLabel" layoutX="319.0" layoutY="419.0" text="OLD PASSWORD*" textFill="#652b02">
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+      <Label fx:id="cpNewPasswordLabel" layoutX="317.0" layoutY="463.0" text="NEW PASSWORD*" textFill="#652b02">
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+
+
+
+
+
+      <Label fx:id="cpTitle" layoutX="506.0" layoutY="315.0" text="CHANGE PASSWORD WINDOW" textFill="#250303">
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+      <Label fx:id="loginTitle" layoutX="546.0" layoutY="100.0" text="LOGIN WINDOW" textFill="#250303">
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+      <Hyperlink fx:id="enableInternet" layoutX="506.0" layoutY="638.0" onAction="#enableInternet" text="Developed By Twisters.tech" textFill="BROWN" />
+
+
+
+
+
+
+
+
+   </children>
+</Pane>

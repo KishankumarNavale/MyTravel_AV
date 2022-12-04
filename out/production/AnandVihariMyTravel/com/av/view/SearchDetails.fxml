@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="regbg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.av.view.SearchController">
+   <children>
+      
+      <Label fx:id="headerLabel" layoutX="483.0" layoutY="14.0" prefHeight="53.0" prefWidth="276.0" text="ANAND VIHARI" textAlignment="RIGHT" textFill="RED">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect></Label>
+      <Separator layoutY="85.0" prefHeight="3.0" prefWidth="1200.0" />
+      <TabPane layoutX="-2.0" layoutY="87.0" prefHeight="541.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="MONTH/TRIP WISE">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="414.0" prefWidth="1005.0">
+                     <children>
+                        <Button fx:id="customLabelSeachPage" layoutX="1110.0" layoutY="20.0" mnemonicParsing="false" onAction="#getCustomerMonthBackAction" text="&lt;&lt; Back" />
+                        <Button fx:id="monthSearch" layoutX="23.0" layoutY="73.0" mnemonicParsing="false" onAction="#searchByMonth" prefHeight="11.0" prefWidth="92.0" text="SEARCH" />
+                        <TableView fx:id="customerMonthTable" layoutY="105.0" prefHeight="409.0" prefWidth="1200.0">
+                          <columns>
+                              <TableColumn fx:id="nameColMonth" editable="true" prefWidth="134.00001525878906" text="Name" />
+                              <TableColumn fx:id="addressColMonth" editable="true" prefWidth="140.0" text="Address" />
+                              <TableColumn fx:id="emailColMonth" editable="true" prefWidth="95.0" text="Email Id" />
+                              <TableColumn fx:id="contactColMonth" editable="true" prefWidth="101.0" text="Contact No" />
+                              <TableColumn fx:id="tourTypeColMonth" editable="true" prefWidth="110.0" text="Tour Type" />
+                              <TableColumn fx:id="tripCodeColMonth" editable="true" prefWidth="60.0" text="Trip Code" />
+                              <TableColumn fx:id="journeyDateColMonth" editable="true" prefWidth="84.0" text="Trip Date" />
+                              <TableColumn fx:id="noOfDaysColMonth" editable="true" prefWidth="32.0" text="Days" />
+                              <TableColumn fx:id="citiesColMonth" editable="true" prefWidth="127.0" text="Cities" />
+                              <TableColumn fx:id="noOfPersonsColMonth" editable="true" prefWidth="51.0" text="Per" />
+                              <TableColumn fx:id="remarksColMonth" editable="true" prefWidth="111.0" text="Remarks" />
+                              <TableColumn fx:id="followUpDateColMonth" editable="true" prefWidth="70.0" text="Follow Up" />
+                              <TableColumn fx:id="creationDateColMonth" editable="true" prefWidth="83.0" text="CreationDate" />
+                          </columns>
+                        </TableView>
+                        <ComboBox fx:id="tripMonthBox" layoutX="22.0" layoutY="21.0" prefHeight="20.0" prefWidth="114.0" promptText="Select Month" />
+                        <Label fx:id="customLabelSeachPage" layoutX="970.0" layoutY="17.0" prefHeight="35.0" prefWidth="63.0" text="TOTAL " textFill="#2c0404">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label fx:id="monthCount" layoutX="1044.0" layoutY="17.0" prefHeight="35.0" prefWidth="43.0" text="0" textFill="#23bf04">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="custMonthDeleteButton" layoutX="729.0" layoutY="72.0" mnemonicParsing="false" onAction="#deleteRegDetails" prefHeight="28.0" prefWidth="138.0" text="DELETE BOOKING" />
+                        <Button fx:id="customLabelSeachPage1" layoutX="894.0" layoutY="72.0" mnemonicParsing="false" onAction="#editTripMonthDetails" prefHeight="28.0" prefWidth="120.0" text="EDIT BOOKING" />
+                        <ComboBox fx:id="tourTypeBox" layoutX="282.0" layoutY="20.0" onAction="#onChangeTourTypeBox" prefHeight="25.0" prefWidth="200.0" promptText="            Select Tour Type" />
+                        <Button fx:id="exportToExcel" layoutX="1039.0" layoutY="74.0" mnemonicParsing="false" onAction="#writeToExcelMonth" prefHeight="25.0" prefWidth="142.0" text="EXPORT TO EXCEL" />
+                        <ComboBox fx:id="tripCodeBox" layoutX="505.0" layoutY="20.0" onAction="#onChangeTripCode" prefHeight="25.0" prefWidth="130.0" promptText="Select Trip Code" />
+                        <ComboBox fx:id="tripYearBox" layoutX="158.0" layoutY="21.0" prefHeight="25.0" prefWidth="102.0" promptText="Select Year" />
+                        <Button fx:id="monthReset" layoutX="163.0" layoutY="73.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="11.0" prefWidth="92.0" text="RESET" />
+                        <Label fx:id="customLabelSeachPage" layoutX="835.0" layoutY="17.0" prefHeight="35.0" prefWidth="81.0" text="BOOKING" textFill="#2c0404">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="monthCountBooking" layoutX="926.0" layoutY="16.0" prefHeight="35.0" prefWidth="43.0" text="0" textFill="#23bf04">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          
+            <Tab text="PHONEWISE">
+              <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="507.0" prefWidth="1200.0">
+                     <children>
+                        <Button fx:id="customLabelSeachPage" layoutX="1110.0" layoutY="20.0" mnemonicParsing="false" onAction="#getCustomerPhoneBackAction" text="&lt;&lt; Back" />
+                        <Button fx:id="phoneSearch" layoutX="263.0" layoutY="20.0" mnemonicParsing="false" onAction="#searchByPhoneNumber" prefHeight="25.0" prefWidth="84.0" text="SEARCH" />
+                        <TableView fx:id="customerPhoneNumberTable" layoutY="105.0" prefHeight="414.0" prefWidth="1200.0">
+                          <columns>
+                          
+                          <TableColumn fx:id="nameColPhone" editable="true" prefWidth="134.00001525878906" text="Name" />
+                              <TableColumn fx:id="addressColPhone" editable="true" prefWidth="140.0" text="Address" />
+                              <TableColumn fx:id="emailColPhone" editable="true" prefWidth="95.0" text="Email Id" />
+                              <TableColumn fx:id="contactColPhone" editable="true" prefWidth="101.0" text="Contact No" />
+                              <TableColumn fx:id="tourTypeColPhone" editable="true" prefWidth="110.0" text="Tour Type" />
+                              <TableColumn fx:id="tripCodeColPhone" editable="true" prefWidth="60.0" text="Trip Code" />
+                              <TableColumn fx:id="journeyDateColPhone" editable="true" prefWidth="84.0" text="Trip Date" />
+                              <TableColumn fx:id="noOfDaysColPhone" editable="true" prefWidth="32.0" text="Days" />
+                              <TableColumn fx:id="citiesColPhone" editable="true" prefWidth="127.0" text="Cities" />
+                              <TableColumn fx:id="noOfPersonsColPhone" editable="true" prefWidth="51.0" text="Per" />
+                              <TableColumn fx:id="remarksColPhone" editable="true" prefWidth="111.0" text="Remarks" />
+                              <TableColumn fx:id="followUpDateColPhone" editable="true" prefWidth="70.0" text="Follow Up" />
+                              <TableColumn fx:id="creationDateColPhone" editable="true" prefWidth="83.0" text="CreationDate" />
+                          
+                          </columns>
+                        </TableView>
+                        <Label fx:id="customLabelSeachPage" layoutX="970.0" layoutY="17.0" prefHeight="35.0" prefWidth="63.0" text="TOTAL " textFill="#2c0404">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label fx:id="phoneCount" layoutX="1044.0" layoutY="17.0" prefHeight="35.0" prefWidth="43.0" text="0" textFill="#23bf04">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="phoneNumber" layoutX="41.0" layoutY="20.0" prefHeight="25.0" prefWidth="166.0" promptText="Enter Contact Number" />
+                        <Button fx:id="customLabelSeachPage" layoutX="894.0" layoutY="72.0" mnemonicParsing="false" onAction="#editTripPhoneDetails" prefHeight="28.0" prefWidth="120.0" text="EDIT BOOKING" />
+                        <Button fx:id="custphoneDeleteButton" layoutX="729.0" layoutY="72.0" mnemonicParsing="false" onAction="#deleteRegPhoneDetails" prefHeight="28.0" prefWidth="138.0" text="DELETE BOOKING" />
+                     </children>
+                  </AnchorPane>
+            </content>
+            </Tab>
+            <Tab text="FOLLOW UP">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="414.0" prefWidth="1005.0">
+                     <children>
+                        <Button fx:id="customLabelSeachPage" layoutX="1110.0" layoutY="20.0" mnemonicParsing="false" onAction="#getCustomerMonthBackAction" text="&lt;&lt; Back" />
+                        <Button fx:id="" layoutX="17.0" layoutY="73.0" mnemonicParsing="false" onAction="#searchForFollowUpDate" prefHeight="11.0" prefWidth="92.0" text="SEARCH" />
+                        <TableView fx:id="customerFollowUpTable" layoutY="105.0" prefHeight="409.0" prefWidth="1200.0">
+                          <columns>
+                              <TableColumn fx:id="nameColFollowUp" editable="true" prefWidth="134.00001525878906" text="Name" />
+                              <TableColumn fx:id="addressColFollowUp" editable="true" prefWidth="140.0" text="Address" />
+                              <TableColumn fx:id="emailColFollowUp" editable="true" prefWidth="95.0" text="Email Id" />
+                              <TableColumn fx:id="contactColFollowUp" editable="true" prefWidth="101.0" text="Contact No" />
+                              <TableColumn fx:id="tourTypeColFollowUp" editable="true" prefWidth="110.0" text="Tour Type" />
+                              <TableColumn fx:id="tripCodeColFollowUp" editable="true" prefWidth="60.0" text="Trip Code" />
+                              <TableColumn fx:id="journeyDateColFollowUp" editable="true" prefWidth="84.0" text="Trip Date" />
+                              <TableColumn fx:id="noOfDaysColFollowUp" editable="true" prefWidth="32.0" text="Days" />
+                              <TableColumn fx:id="citiesColFollowUp" editable="true" prefWidth="127.0" text="Cities" />
+                              <TableColumn fx:id="noOfPersonsColFollowUp" editable="true" prefWidth="51.0" text="Per" />
+                              <TableColumn fx:id="remarksColFollowUp" editable="true" prefWidth="111.0" text="Remarks" />
+                              <TableColumn fx:id="followUpDateColFollowUp" editable="true" prefWidth="70.0" text="Follow Up" />
+                              <TableColumn fx:id="creationDateColFollowUp" editable="true" prefWidth="83.0" text="CreationDate" />
+                          </columns>
+                        </TableView>
+                        <Label fx:id="customLabelSeachPage" layoutX="970.0" layoutY="17.0" prefHeight="35.0" prefWidth="63.0" text="TOTAL " textFill="#2c0404">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label fx:id="followUpCount" layoutX="1044.0" layoutY="17.0" prefHeight="35.0" prefWidth="43.0" text="0" textFill="#23bf04">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="custFollowUpDeleteButton" layoutX="729.0" layoutY="72.0" mnemonicParsing="false" onAction="#deleteFollowUpDetails" prefHeight="28.0" prefWidth="138.0" text="DELETE BOOKING" />
+                        <Button fx:id="customLabelSeachPage1" layoutX="894.0" layoutY="72.0" mnemonicParsing="false" onAction="#editFollowUpDetails" prefHeight="28.0" prefWidth="120.0" text="EDIT BOOKING" />
+                        <Button fx:id="exportToExcel" layoutX="1039.0" layoutY="74.0" mnemonicParsing="false" onAction="#writeToExcelFollowUpDate" prefHeight="25.0" prefWidth="142.0" text="EXPORT TO EXCEL" />
+                        <DatePicker fx:id="followUpDate" layoutX="18.0" layoutY="20.0" prefHeight="25.0" prefWidth="152.0" promptText="Select FollowUp Date" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="ENQUIRY DATE WISE">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="414.0" prefWidth="1005.0">
+                     <children>
+                        <Button fx:id="customLabelSeachPage" layoutX="1110.0" layoutY="20.0" mnemonicParsing="false" onAction="#getCustomerMonthBackAction" text="&lt;&lt; Back" />
+                        <Button fx:id="" layoutX="17.0" layoutY="73.0" mnemonicParsing="false" onAction="#searchForEnquiryDate" prefHeight="11.0" prefWidth="92.0" text="SEARCH" />
+                        <TableView fx:id="customerEnquiryTable" layoutY="105.0" prefHeight="409.0" prefWidth="1200.0">
+                          <columns>
+                              <TableColumn fx:id="nameColEnquiry" editable="true" prefWidth="134.00001525878906" text="Name" />
+                              <TableColumn fx:id="addressColEnquiry" editable="true" prefWidth="140.0" text="Address" />
+                              <TableColumn fx:id="emailColEnquiry" editable="true" prefWidth="95.0" text="Email Id" />
+                              <TableColumn fx:id="contactColEnquiry" editable="true" prefWidth="101.0" text="Contact No" />
+                              <TableColumn fx:id="tourTypeColEnquiry" editable="true" prefWidth="110.0" text="Tour Type" />
+                              <TableColumn fx:id="tripCodeColEnquiry" editable="true" prefWidth="60.0" text="Trip Code" />
+                              <TableColumn fx:id="journeyDateColEnquiry" editable="true" prefWidth="84.0" text="Trip Date" />
+                              <TableColumn fx:id="noOfDaysColEnquiry" editable="true" prefWidth="32.0" text="Days" />
+                              <TableColumn fx:id="citiesColEnquiry" editable="true" prefWidth="127.0" text="Cities" />
+                              <TableColumn fx:id="noOfPersonsColEnquiry" editable="true" prefWidth="51.0" text="Per" />
+                              <TableColumn fx:id="remarksColEnquiry" editable="true" prefWidth="111.0" text="Remarks" />
+                              <TableColumn fx:id="followUpDateColEnquiry" editable="true" prefWidth="70.0" text="Follow Up" />
+                              <TableColumn fx:id="creationDateColEnquiry" editable="true" prefWidth="83.0" text="CreationDate" />
+                          </columns>
+                        </TableView>
+                        <Label fx:id="customLabelSeachPage" layoutX="970.0" layoutY="17.0" prefHeight="35.0" prefWidth="63.0" text="TOTAL " textFill="#2c0404">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label fx:id="enquiryCount" layoutX="1044.0" layoutY="17.0" prefHeight="35.0" prefWidth="43.0" text="0" textFill="#23bf04">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="custEnquiryDeleteButton" layoutX="729.0" layoutY="72.0" mnemonicParsing="false" onAction="#deleteEnquiryDateDetails" prefHeight="28.0" prefWidth="138.0" text="DELETE BOOKING" />
+                        <Button fx:id="customLabelSeachPage1" layoutX="894.0" layoutY="72.0" mnemonicParsing="false" onAction="#editEnquiryDateDetails" prefHeight="28.0" prefWidth="120.0" text="EDIT BOOKING" />
+                        <Button fx:id="exportToExcel" layoutX="1039.0" layoutY="74.0" mnemonicParsing="false" onAction="#writeToExcelEnquiryDate" prefHeight="25.0" prefWidth="142.0" text="EXPORT TO EXCEL" />
+                        <DatePicker fx:id="enquiryDate" layoutX="18.0" layoutY="20.0" prefHeight="25.0" prefWidth="143.0" promptText="Select Enquiry Date" />
+                     </children>
+                  </AnchorPane>
+            </content>
+
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Separator layoutY="629.0" prefHeight="3.0" prefWidth="1200.0" />
+      <Label fx:id="userLabel" alignment="BOTTOM_CENTER" layoutX="1097.0" layoutY="33.0" prefHeight="20.0" prefWidth="74.0" textFill="#220303">
+         <effect>
+            <Blend />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="1098.0" layoutY="51.0" onAction="#logoutAction" text="SIGN OUT" textAlignment="CENTER" textFill="#3318e0">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font></Hyperlink>
+      <Hyperlink fx:id="enableInternet" layoutX="506.0" layoutY="638.0" onAction="#enableInternet" text="Developed By Twisters.tech" textFill="BROWN" />
+   </children>
+</Pane>

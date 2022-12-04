@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="regbg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.av.view.RegisterController">
+   <children>
+      <Label fx:id="headerLabel" alignment="TOP_CENTER" layoutX="388.0" layoutY="28.0" prefHeight="26.0" prefWidth="450.0" text="ANAND VIHARI" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font name="Calibri" size="36.0" />
+         </font>
+      </Label>
+      <Separator layoutX="2.0" layoutY="100.0" prefHeight="8.0" prefWidth="1200.0" />
+      <Separator layoutX="-77.0" layoutY="621.0" prefHeight="8.0" prefWidth="1280.0" />
+      <TextField fx:id="fullName" layoutX="388.0" layoutY="121.0" prefHeight="25.0" prefWidth="300.0" promptText="Enter Full name" />
+      <TextArea fx:id="address" layoutX="388.0" layoutY="164.0" prefHeight="91.0" prefWidth="300.0" promptText="Enter Address" />
+      <TextField fx:id="emailId" layoutX="388.0" layoutY="270.0" prefHeight="25.0" prefWidth="300.0" promptText="Enter Valid Email ID" />
+      <TextField fx:id="phone" layoutX="388.0" layoutY="312.0" onKeyTyped="#onPhoneDataType" prefHeight="25.0" prefWidth="300.0" promptText="Enter Contact Number" />
+      <TextField fx:id="alternatePhone" layoutX="723.0" layoutY="311.0" onKeyTyped="#onPhoneDataType" prefHeight="25.0" prefWidth="314.0" promptText="Enter Alternate Contact Number" />
+      <ComboBox fx:id="tourTypeBox" editable="false" layoutX="389.0" layoutY="362.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#onChangeTourTypeBox" prefHeight="31.0" prefWidth="166.0" promptText="Select Tour Type">
+         <effect>
+            <Blend />
+         </effect>
+      </ComboBox>
+      <ComboBox fx:id="tripCodeBox" editable="false" layoutX="557.0" layoutY="362.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#onChangeTripCode" prefHeight="31.0" prefWidth="134.0" promptText="Select Trip Code">
+         <effect>
+            <Blend />
+         </effect>
+      </ComboBox>
+      <Label fx:id="customLabel" layoutX="239.0" layoutY="123.0" text="FULL NAME" textFill="RED">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="customLabel" layoutX="93.0" layoutY="197.0" text="" />
+      <Label fx:id="customLabel" layoutX="238.0" layoutY="167.0" text="ADDRESS" textFill="RED">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="customLabel" layoutX="240.0" layoutY="273.0" text="EMAIL ID" textFill="RED">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="customLabel" layoutX="240.0" layoutY="317.0" text="PHONE " textFill="RED">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="customLabel" layoutX="239.0" layoutY="365.0" text="TRIP CODE" textFill="RED">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="customLabel" layoutX="239.0" layoutY="411.0" text="CITIES" textFill="RED">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="customLabel" layoutX="238.0" layoutY="456.0" prefHeight="21.0" prefWidth="108.0" text="TOUR DATE" textFill="RED">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <TextField fx:id="tour" layoutX="388.0" layoutY="409.0" prefHeight="25.0" prefWidth="300.0" promptText="Enter City in particular" />
+      <DatePicker fx:id="journeyDate" layoutX="389.0" layoutY="453.0" promptText="Select Journey Date" />
+      <TextField fx:id="noOfDays" layoutX="388.0" layoutY="497.0" prefHeight="25.0" prefWidth="300.0" promptText="Enter No Of Days" />
+      <TextField fx:id="noOfPerson" layoutX="387.0" layoutY="541.0" prefHeight="25.0" prefWidth="300.0" promptText="Enter No Of Persons" />
+      <TextArea fx:id="descriptionArea" layoutX="723.0" layoutY="361.0" prefHeight="67.0" prefWidth="314.0" />
+      <TextArea fx:id="remarks" layoutX="723.0" layoutY="447.0" prefHeight="91.0" prefWidth="314.0" />
+      <Button fx:id="customLabel" layoutX="387.0" layoutY="587.0" mnemonicParsing="false" onAction="#editRegisterCustomers" prefHeight="25.0" prefWidth="108.0" text="SAVE" textFill="#170101">
+         <effect>
+            <Blend />
+         </effect></Button>
+      <Button fx:id="customLabel" layoutX="580.0" layoutY="587.0" mnemonicParsing="false" onAction="#resetRegDetails" prefHeight="25.0" prefWidth="108.0" text="RESET" textFill="#170101">
+         <effect>
+            <Blend />
+         </effect></Button>
+      <Label fx:id="customLabel" layoutX="237.0" layoutY="501.0" prefHeight="17.0" prefWidth="91.0" text="NO OF DAYS" textFill="RED">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="customLabel" layoutX="236.0" layoutY="542.0" prefHeight="21.0" prefWidth="126.0" text="NO OF PERSONS" textFill="RED">
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+      <Label fx:id="userLabel" alignment="BOTTOM_CENTER" layoutX="1097.0" layoutY="33.0" prefHeight="20.0" prefWidth="74.0" textFill="#220303">
+         <effect>
+            <Blend />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="customLabel" layoutX="723.0" layoutY="428.0" prefHeight="21.0" prefWidth="126.0" text="REMARKS" textFill="RED">
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+      <Label fx:id="packageLabelArea" layoutX="723.0" layoutY="341.0" prefHeight="21.0" prefWidth="126.0" text="PACKAGE" textFill="RED">
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+      <DatePicker fx:id="followUpDate" layoutX="863.0" layoutY="544.0" promptText="Select Follow Up Date" />
+      <Label fx:id="customLabel" layoutX="724.0" layoutY="547.0" prefHeight="21.0" prefWidth="134.0" text="FOLLOW UP DATE" textFill="RED">
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+      <Hyperlink fx:id="enableInternet" layoutX="506.0" layoutY="638.0" onAction="#enableInternet" text="Developed By Twisters.tech" textFill="BROWN" />
+   </children>
+</Pane>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="regbg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.av.view.PackageController">
+   <children>
+      <Label fx:id="headerLabel" alignment="TOP_CENTER" layoutX="285.0" layoutY="27.0" prefHeight="26.0" prefWidth="450.0" text="ANAND VIHARI" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Separator layoutX="2.0" layoutY="84.0" prefHeight="8.0" prefWidth="1200.0" />
+      <Separator layoutY="620.0" prefHeight="8.0" prefWidth="1200.0" />
+      <TextField fx:id="packageName" layoutX="360.0" layoutY="120.0" prefHeight="25.0" prefWidth="289.0" promptText="Enter Package Name" />
+      <ComboBox fx:id="tourTypeBox" editable="false" layoutX="360.0" layoutY="153.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#onChangeTourTypeBox" prefHeight="31.0" prefWidth="165.0" promptText="Select Tour Type">
+         <effect>
+            <Blend />
+         </effect>
+      </ComboBox>
+      <TextField fx:id="tripCode" layoutX="525.0" layoutY="156.0" onKeyTyped="#onPhoneDataType" prefHeight="25.0" prefWidth="124.0" promptText="Enter Trip Code" />
+      <TextField fx:id="noOfDays" layoutX="360.0" layoutY="193.0" prefHeight="25.0" prefWidth="289.0" promptText="Enter No Of Days" />
+      <TextField fx:id="fare" layoutX="360.0" layoutY="226.0" prefHeight="25.0" prefWidth="289.0" promptText="Enter the Price of Package" />
+      <TextField fx:id="travelMode" layoutX="360.0" layoutY="261.0" onKeyTyped="#onPhoneDataType" prefHeight="25.0" prefWidth="289.0" promptText="Enter Mode of Travelling" />
+      <TextField fx:id="distance" layoutX="360.0" layoutY="299.0" prefHeight="31.0" prefWidth="116.0" promptText="Enter Distance" />
+      <TextArea fx:id="cities" layoutX="356.0" layoutY="340.0" prefHeight="91.0" prefWidth="289.0" promptText="Enter Cities Covered" />
+      <TextArea fx:id="departureDates" layoutX="356.0" layoutY="442.0" prefHeight="91.0" prefWidth="289.0" promptText="Enter Depature Dates" />
+      <Button fx:id="customLabel" layoutX="351.0" layoutY="574.0" mnemonicParsing="false" onAction="#savePackages" prefHeight="25.0" prefWidth="108.0" text="SAVE" textFill="#170101">
+         <effect>
+            <Blend />
+         </effect></Button>
+      <Button fx:id="customLabel" layoutX="541.0" layoutY="574.0" mnemonicParsing="false" onAction="#resetPackages" prefHeight="25.0" prefWidth="108.0" text="RESET" textFill="#170101">
+         <effect>
+            <Blend />
+         </effect></Button>
+      <Label fx:id="customLabel" layoutX="209.0" layoutY="126.0" text="PACKAGE NAME" textFill="#dd1d7a">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="customLabel" layoutX="93.0" layoutY="197.0" text="" />
+      <Label fx:id="customLabel" layoutX="213.0" layoutY="348.0" text="CITIES" textFill="#dd1d7a">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="customLabel" layoutX="210.0" layoutY="300.0" text="DISTANCE" textFill="#dd1d7a">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="customLabel" layoutX="211.0" layoutY="267.0" text="TRAVEL MODE" textFill="#dd1d7a">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="customLabel" layoutX="209.0" layoutY="160.0" text="TRIP CODE" textFill="#dd1d7a">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="customLabel" layoutX="211.0" layoutY="230.0" text="FARE" textFill="#dd1d7a">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Button fx:id="customLabel" layoutX="885.0" layoutY="121.0" mnemonicParsing="false" onAction="#getEnterPackagesBackAction" prefHeight="31.0" prefWidth="91.0" text="&lt;&lt;  BACK" textFill="#170101">
+         <effect>
+            <Blend />
+         </effect>
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Label fx:id="customLabel" layoutX="210.0" layoutY="442.0" prefHeight="21.0" prefWidth="108.0" text="DEPARTURES" textFill="#dd1d7a">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="customLabel" layoutX="211.0" layoutY="194.0" prefHeight="17.0" prefWidth="91.0" text="NO OF DAYS" textFill="#dd1d7a">
+         <effect>
+            <Blend />
+         </effect></Label>
+      <Label fx:id="customLabel2" layoutX="478.0" layoutY="303.0" text="Kms" textFill="#360606">
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+      
+      <Label fx:id="userLabel" layoutX="1104.0" layoutY="43.0" prefHeight="17.0" prefWidth="71.0" textFill="#220303">
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+      <Hyperlink layoutX="1094.0" layoutY="61.0" onAction="#logoutAction" text="SIGN OUT" textFill="#3318e0">
+         <font>
+            <Font size="14.0" />
+         </font></Hyperlink>
+      <Hyperlink fx:id="enableInternet" layoutX="506.0" layoutY="638.0" onAction="#enableInternet" text="Developed By Twisters.tech" textFill="BROWN" />
+   </children>
+</Pane>
