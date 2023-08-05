@@ -2,6 +2,7 @@ package org.mla.cms.controller;
 
 
 import lombok.AllArgsConstructor;
+import org.mla.cms.model.Complaints;
 import org.mla.cms.model.Mla;
 import org.mla.cms.model.Users;
 import org.mla.cms.service.MlaService;
@@ -11,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
@@ -41,6 +43,35 @@ public class mlaController {
         List<Mla> mlas = mlaService.getAllMlas();
         return new ResponseEntity<>(mlas, HttpStatus.OK);
     }
+
+    // Build Get All Users REST API
+    // http://localhost:8080/api/users
+    @GetMapping("{constituency}")
+    public ResponseEntity<List<String>> getAllMlaByConstituency(@PathVariable("constituency") String constituency){
+        List<String> mlas = mlaService.getAllMlasByConstituency(constituency);
+        return new ResponseEntity<>(mlas, HttpStatus.OK);
+    }
+
+    // Build Get All Users REST API
+    // http://localhost:8080/api/users
+    @GetMapping("/constituencies")
+    public ResponseEntity<List<String>> getAllConstituency(){
+        List<String> mlas = mlaService.getAllConstituency();
+        return new ResponseEntity<>(mlas, HttpStatus.OK);
+    }
+
+    // build get user by id REST API
+    // http://localhost:8080/api/users/1
+    @GetMapping("/mlaNConstitueny")
+    public ResponseEntity<Optional<Mla>> getMLAByMlaNameAndConstituency(@RequestParam("mlaName") String mlaName,
+                                                                          @RequestParam("constituency") String constituency){
+        Optional<Mla> mla = mlaService.getMLAByMlaNameAndConstituency(mlaName,constituency);
+        return new ResponseEntity<>(mla, HttpStatus.OK);
+    }
+
+
+
+
 
     // Build Update Users REST API
     @PutMapping("{id}")

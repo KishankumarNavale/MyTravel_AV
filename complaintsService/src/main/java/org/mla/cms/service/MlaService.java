@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -44,5 +45,18 @@ public class MlaService {
 
     public void deleteMla(Integer mlaId) {
         mlaRepository.deleteById(mlaId);
+    }
+
+    public List<String> getAllMlasByConstituency(String constituency) {
+       List<Mla> mlas =  mlaRepository.findAll().stream().filter(x -> null != x.getConstituency()).collect(Collectors.toList());
+       return mlas.stream().filter(x -> constituency.equals(x.getConstituency())).map(y -> y.getMlaName()).collect(Collectors.toList());
+    }
+
+    public List<String> getAllConstituency() {
+       return mlaRepository.findAll().stream().map(x -> x.getConstituency()).collect(Collectors.toList());
+    }
+
+    public Optional<Mla> getMLAByMlaNameAndConstituency(String mlaName, String constituency) {
+       return mlaRepository.findAll().stream().filter(x -> x.getMlaName().equals(mlaName) && x.getConstituency().equals(constituency)).findAny();
     }
 }

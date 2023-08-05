@@ -20,8 +20,11 @@ public class Complaints {
     @Column(name="user_id")
     int userId;
 
+    @Column(name="complaint_title")
+    String complaintTitle;
+
     @Column(name="image")
-    String image;
+    byte[] image;
 
     @Column(name="description")
     String description;
@@ -34,6 +37,16 @@ public class Complaints {
 
     @Column(name="complaint_status")
     String complaintStatus;
+
+    @Column(name="constituency")
+    String constituency;
+
+    @Column(name="mla_name")
+    String mlaName;
+
+    @Column(name="comments")
+    String comments;
+
 
 
 }

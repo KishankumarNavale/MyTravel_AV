@@ -9,34 +9,28 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "mla")
-public class Mla {
+@Table(name = "feedbacks")
+public class Feedbacks {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="mla_id")
-    int mlaId;
+    @Column(name="feedback_id")
+    int feedbackId;
 
     @Column(name="mla_name")
     String mlaName;
 
-    @Column(name="contact_number")
-    String contactNumber;
+    @Column(name="feedback")
+    String feedback;
 
-    @Column(name="city")
-    String city;
-
-    @Column(name="state")
-    String state;
-
-    @Column(name="email_id")
-    String emailId;
-
-    @Column(name="party")
-    String party;
+    @Column(name="date")
+    String date;
 
     @Column(name="constituency")
     String constituency;
+
+    @Column(name="user_id")
+    String userId;
 
 
 }
